@@ -1,0 +1,127 @@
+{
+    "Flint" : {
+        "name" : "火打石",
+        "amount" : 100,
+        "point" : 5
+    },
+    "Thatch" : {
+        "name" : "わら",
+        "amount" : 100,
+        "point" : 10
+    },
+    "Chitin" : {
+        "name" : "キチン",
+        "amount" : 100,
+        "point" : 10
+    },
+    "Wood" : {
+        "name" : "木材",
+        "amount" : 100,
+        "point" : 10
+    },
+    "Stone" : {
+        "name" : "石",
+        "amount" : 100,
+        "point" : 10
+    },
+    "Fiber" : {
+        "name" : "繊維",
+        "amount" : 300,
+        "point" : 15
+    },
+    "Charcoal" : {
+        "name" : "木炭",
+        "amount" : 100,
+        "point" : 20
+    },
+    "Silica_Pearls" : {
+        "name" : "シリカ真珠",
+        "amount" : 100,
+        "point" : 30
+    },
+    "Polymer" : {
+        "name" : "有機ポリマー",
+        "amount" : 100,
+        "point" : 40
+    },
+    "Hide" : {
+        "name" : "皮",
+        "amount" : 200,
+        "point" : 40
+    },
+    "Crystal" : {
+        "name" : "水晶",
+        "amount" : 100,
+        "point" : 70
+    },
+    "Cementing_Paste" : {
+        "name" : "セメント",
+        "amount" : 100,
+        "point" : 80
+    },
+    "Black_Pearl" : {
+        "name" : "黒真珠",
+        "amount" : 100,
+        "point" : 750
+    },
+    "Iron_Ingot" : {
+        "name" : "金属インゴット",
+        "amount" : 100,
+        "point" : 250
+    },
+    "Element_Shard" : {
+        "name" : "エレメントシャード",
+        "amount" : 100,
+        "point" : 400
+    },
+    "Element" : {
+        "name" : "エレメント",
+        "amount" : 1,
+        "point" : 450
+    },
+    "Honey" : {
+        "name" : "はちみつ",
+        "amount" : 1,
+        "point" : 5
+    },
+    "Extraordinary_Kibble" : {
+        "name" : "特級キブル",
+        "amount" : 10,
+        "point" : 350
+    },
+    "Bio_Toxin" : {
+        "name" : "バイオトキシン",
+        "amount" : 100,
+        "point" : 250
+    },
+    "Cryopod" : {
+        "name" : "空の低温ポッド",
+        "amount" : 1,
+        "point" : 50
+    },
+    "Pomp_Shotgun" : {
+        "name" : "ポンプショットガン(至高)",
+        "amount" : 1,
+        "point" : 4500
+    },
+    "Shocking_Tranquilizer_Dart" : {
+        "name" : "強力麻酔弾",
+        "amount" : 50,
+        "point" : 1500
+    },
+    "Shotgun_Ammo" : {
+        "name" : "ショットガンの弾",
+        "amount" : 10,
+        "point" : 50
+    },
+    "Sucuba_Tank" : {
+        "name" : "スキューバタンク(244)",
+        "amount" : 1,
+        "point" : 500
+    },
+    "Giganotosaurus_Egg" : {
+        "name" : "ギガノトサウルスの有精卵",
+        "amount" : 1,
+        "point" : 12000
+    }
+}

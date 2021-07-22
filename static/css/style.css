@@ -1,0 +1,282 @@
+body  {
+    margin : 0 auto;
+    max-height : 3000px;
+}
+
+input[type="number"]::-webkit-outer-spin-button, 
+input[type="number"]::-webkit-inner-spin-button { 
+    -webkit-appearance: none; 
+    margin: 0; 
+} 
+
+.header {
+    width : 100%;
+    height : 70px;
+    background: black;
+    color : white;
+}
+
+.header > p {
+    margin : 0;
+    line-height : 70px;
+    width : 250px;
+    margin-left : 20px;
+    font-weight : bold;
+    letter-spacing : 3px;;
+}
+
+.head-nav {
+    display : flex;
+    flex-direction : row;
+    width : 100%;
+    background : silver;
+}
+
+.head-nav > li {
+    width : 34%;
+    height : 60px;
+    line-height : 60px;
+    text-align : center;
+    color : white;
+    background : rgb(49, 47, 47);
+    list-style : none;
+    font-weight : bold;
+    font-size : 28px;
+    cursor : pointer;
+}
+
+.head-nav > li:not( :last-child ) {
+    margin-right : 1px;
+    
+}
+
+.menus {
+    height : 2500px;
+    width : 100%;
+    background-color : rgb(49, 47, 47);
+    margin-top : 1px;
+}
+
+.menu {
+    position : absolute;
+    top : 130px;
+    width : 100%;
+    height : 100%;  
+    margin-top : 1px;
+}
+
+.buy-menu {
+    visibility : visible;    
+    margin-top : 1px;
+}
+
+.sell-menu {
+    visibility : hidden;
+    margin-top : 1px;
+    
+}
+
+.trade-menu {
+    visibility : hidden;
+    margin-top : 1px;
+}
+
+/* Container */
+
+.main-container {
+    
+    position : relative;
+    left : 40px;
+    display : flex;
+    flex-direction : row;
+    flex-wrap : wrap;
+    width : 100%;
+    height : 100%;;
+}
+
+/* Content */
+
+.content {
+    width : 250px;
+    height : 250px;
+    border : solid 0.5px black;
+    border-radius : 20%;
+}
+
+.name {
+    position : relative;
+    top : 20px;
+    left : 20px;
+    font-size : 18px;
+    font-weight : bolder;
+}
+
+.amount {
+    position : relative;
+    top : 125px;
+    left : 170px;
+    font-size : 20px;
+    font-weight : bold;
+}
+
+.point {
+    position : relative;
+    top : 90px;
+    left : 20px;
+    font-size : 23px;
+    font-weight : bold;
+    color : rgb(238, 234, 12)
+}
+
+.minus {
+    position : relative;
+    top : 110px;
+    left : 40px;
+    width : 40px;
+    height : 40px;
+    text-align : center;
+    font-size : 30px;
+    font-weight : bold;
+    cursor : pointer;
+}
+
+.plus {
+    position : relative;
+    top : 70px;;
+    left : 175px;
+    width : 40px;
+    height : 40px;
+    text-align : center;
+    font-size : 30px;
+    font-weight : bold;
+    cursor : pointer;
+}
+
+.current-amount {
+    position : relative;
+    top : 30px;
+    left : 85px;
+    width : 80px;
+    height : 30px;
+    border : none;
+    background : rgb(170, 170, 170);
+    text-align : center;
+    font-size : 25px;
+    font-weight : bold;
+    outline : none;
+}
+
+
+/* other */
+
+.buy-title {
+    font-size : 48px;
+    color : white;
+    text-align : center;
+    font-weight : bold;
+    margin : 35px auto 50px auto;
+    letter-spacing : 20px;;
+}
+
+/* cart menu */
+
+/* items top */
+.items-top { 
+    overflow : hidden;
+    width : 100%;
+    height : 40px;
+    line-height : 40px;
+    display : flex;
+    flex-direction : row;
+    background-color : rgb(19, 228, 120);
+    border-bottom : solid 1px white;
+}
+
+.item-name-top {
+    width : 40%;
+    text-align : center;
+    font-weight : bold;
+    border-right : solid 1px white;
+}
+
+.item-amount-top {
+    width : 30%;
+    text-align : center;
+    font-weight : bold;
+    border-right : solid 1px white;
+}
+
+.item-point-top {
+    width : 30%;
+    text-align : center;
+    font-weight : bold;
+}
+
+/* items */
+.items {
+    overflow : hidden;
+    width : 100%;
+    height : 40px;
+    line-height : 40px;
+    display : flex;
+    flex-direction : row;
+    background : rgb(71, 71, 71);
+    border-bottom : solid 1px white;
+}
+
+.items > img {
+    width : 30px;
+    height : 30px;
+    padding : 5px;
+    margin-right : 20px;
+}
+
+.items > .item-name { 
+    width : 91%;
+    text-align : left;
+    color : white;
+    font-weight : bold;
+    
+}
+
+.items > .item-amount {
+    width : 100%;
+    text-align : right;
+    color : white;
+    font-weight : bold;
+}
+
+.items > .item-point {
+    width : 100%;
+    text-align : right;
+    font-weight : bold;
+    color : white;
+    margin-right : 20px;
+    margin-left : 30px;
+}
+
+.submit {
+    position : absolute;
+    top : 3px;
+    right : 7%;
+    width : 50px;
+    height : 40px;
+    text-align : center;
+    color : rgb(135, 206, 235);
+    background : black;
+    border : none;
+    font-size : 18px;
+    font-weight : bold;
+    cursor : pointer;
+}
+
+.aggre {
+    width : 100%;
+    text-align : right;
+    margin-right : 20px;
+    color : red;
+}
+
+.none {
+    display : none;
+}
