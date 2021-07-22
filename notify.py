@@ -5,7 +5,7 @@ def main():
 
 def send_line_notify( notification_message ):
     # 通知を行う
-    line_notify_token = os.environ["LINE_ACCESS_TOKEN"]
+    line_notify_token = "FacZHk08Ln7FvjtXYrDfd0oFcAPVLPfjTDac1Q0TFDI"
     line_notify_api = "https://notify-api.line.me/api/notify"
     headers = { "Authorization" : f"Bearer {line_notify_token}" }
     data = {"message" : f"message: {notification_message}"}
