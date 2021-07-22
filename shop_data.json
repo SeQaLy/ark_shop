@@ -1,122 +1,170 @@
 {
     "Flint" : {
+        "category" : "resource",
         "name" : "火打石",
         "amount" : 100,
         "point" : 5
     },
     "Thatch" : {
+        "category" : "resource",
         "name" : "わら",
         "amount" : 100,
-        "point" : 10
+        "point" : 5
     },
     "Chitin" : {
+        "category" : "resource",
         "name" : "キチン",
         "amount" : 100,
         "point" : 10
     },
     "Wood" : {
+        "category" : "resource",
         "name" : "木材",
         "amount" : 100,
         "point" : 10
     },
     "Stone" : {
+        "category" : "resource",
         "name" : "石",
         "amount" : 100,
         "point" : 10
     },
     "Fiber" : {
+        "category" : "resource",
         "name" : "繊維",
         "amount" : 300,
-        "point" : 15
+        "point" : 10
     },
     "Charcoal" : {
+        "category" : "resource",
         "name" : "木炭",
         "amount" : 100,
         "point" : 20
     },
     "Silica_Pearls" : {
+        "category" : "resource",
         "name" : "シリカ真珠",
         "amount" : 100,
         "point" : 30
     },
     "Polymer" : {
+        "category" : "resource",
         "name" : "有機ポリマー",
         "amount" : 100,
         "point" : 40
     },
     "Hide" : {
+        "category" : "resource",
         "name" : "皮",
         "amount" : 200,
         "point" : 40
     },
     "Crystal" : {
+        "category" : "resource",
         "name" : "水晶",
         "amount" : 100,
-        "point" : 70
+        "point" : 40
     },
     "Cementing_Paste" : {
+        "category" : "resource",
         "name" : "セメント",
         "amount" : 100,
-        "point" : 80
+        "point" : 50
     },
     "Black_Pearl" : {
+        "category" : "resource",
         "name" : "黒真珠",
         "amount" : 100,
-        "point" : 750
+        "point" : 500
     },
     "Iron_Ingot" : {
+        "category" : "resource",
         "name" : "金属インゴット",
         "amount" : 100,
-        "point" : 250
+        "point" : 200
+    },
+    "Bio_Toxin" : {
+        "category" : "resource",
+        "name" : "バイオトキシン",
+        "amount" : 100,
+        "point" : 200
     },
     "Element_Shard" : {
+        "category" : "resource",
         "name" : "エレメントシャード",
         "amount" : 100,
-        "point" : 400
+        "point" : 300
     },
     "Element" : {
+        "category" : "resource",
         "name" : "エレメント",
         "amount" : 1,
-        "point" : 450
+        "point" : 350
     },
     "Honey" : {
+        "category" : "food",
         "name" : "はちみつ",
         "amount" : 1,
         "point" : 5
     },
     "Extraordinary_Kibble" : {
+        "category" : "food",
         "name" : "特級キブル",
         "amount" : 10,
-        "point" : 350
+        "point" : 200
     },
-    "Bio_Toxin" : {
-        "name" : "バイオトキシン",
-        "amount" : 100,
-        "point" : 250
+    "Lemon" :{
+    "category" : "food",
+    "name" : "レモン",
+    "amount" : 100,
+    "point" : 30
     },
-    "Cryopod" : {
-        "name" : "空の低温ポッド",
-        "amount" : 1,
-        "point" : 50
+    "Potato" :{
+    "category" : "food",
+    "name" : "じゃがいも",
+    "amount" : 100,
+    "point" : 30
+    },
+    "Longrass" :{
+    "category" : "food",
+    "name" : "トウモロコシ",
+    "amount" : 100,
+    "point" : 30
     },
     "Pomp_Shotgun" : {
+        "category" : "equip",
         "name" : "ポンプショットガン(至高)",
         "amount" : 1,
         "point" : 4500
     },
-    "Shocking_Tranquilizer_Dart" : {
-        "name" : "強力麻酔弾",
-        "amount" : 50,
-        "point" : 1500
-    },
     "Shotgun_Ammo" : {
+        "category" : "equip",
         "name" : "ショットガンの弾",
         "amount" : 10,
         "point" : 50
     },
+    "Shocking_Tranquilizer_Dart" : {
+        "category" : "equip",
+        "name" : "強力麻酔弾",
+        "amount" : 50,
+        "point" : 1000
+    },
     "Sucuba_Tank" : {
+        "category" : "equip",
         "name" : "スキューバタンク(244)",
         "amount" : 1,
         "point" : 500
+    },
+    "Tek_Canteen" :{
+        "category" : "tool",
+        "name" : "TEK水筒",
+        "amount" : 1,
+        "point" : 250
+    },
+    "Cryopod" : {
+        "category" : "tool",
+        "name" : "空の低温ポッド",
+        "amount" : 1,
+        "point" : 50
     }
 }

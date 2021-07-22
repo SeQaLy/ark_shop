@@ -1,16 +1,11 @@
 import sqlite3
 from flask import Flask, render_template, url_for, request, redirect, session
 import json, notify, os
-
-from flask.templating import DispatchingJinjaLoader
 ## my library
 import stock
 
 
 shop_data = {}
-
-# with open( "shop_data.json", mode="r", encoding="utf-8" ) as f:
-#     shop_data = json.load( f )
 
 app = Flask( __name__ )
 
@@ -26,8 +21,7 @@ def check_buy_content():
     with open( "shop_data.json", mode="r", encoding="utf-8" ) as f:
             shop_data = json.load( f )
     item_list = []
-    total_point = request.form["total-point"]
-    buyer_name = request.form["buyer-name"]
+    
     for data_key in shop_data.keys():
         try:
             if not request.form[data_key] == None:
@@ -37,8 +31,7 @@ def check_buy_content():
         except:
             print( "{} is passed".format( data_key ) )
     print( item_list )
-    
-    notify.send_line_notify( format_text( item_list, total_point, buyer_name ) )
+
     return item_list
     
 
@@ -67,9 +60,19 @@ def index():
             shop_data = json.load( f )
         buy_items = check_buy_content()
         for buy_item in buy_items:
-            stock.update_stock( buy_item[0], int( buy_item[1] ), "minus" )
+            stock_data = stock.convert_dict( stock.get_stock_data() )
+            for buy_item_name in stock_data.keys():
+                if stock_data[buy_item_name]["name"] == buy_item[0]:
+                    if stock_data[buy_item_name]["stock"] - int( buy_item[1] ) >= 0:
+                        stock.update_stock( buy_item[0], int( buy_item[1] ), "minus" )
+                        total_point = request.form["total-point"]
+                        buyer_name = request.form["buyer-name"]
+                        notify.send_line_notify( format_text( buy_items, total_point, buyer_name ) )
+                    else:
+                        return render_template( "cantbuy.html" )
+                        
             stock_data = stock.convert_dict( stock.get_stock_data() )
     return render_template( "index.html", shop_data=shop_data, stock_data=stock_data )
 
 if __name__ == "__main__":
-    app.run( host="0.0.0.0", port=int( os.environ.get( "PORT", 5000 ) ) ) 
+    app.run( host="127.0.0.1", port=int( os.environ.get( "PORT", 5000 ) ) ) 

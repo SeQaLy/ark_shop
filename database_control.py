@@ -1,3 +1,3 @@
 import stock
 
-stock.update_stock( "特級キブル", 100, "new" )
+stock.update_stock( "火打石", 10000, "new" )

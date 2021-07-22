@@ -1,4 +1,8 @@
 {
+    history.pushState(null, null, location.href);
+    window.addEventListener('popstate', (e) => {
+    history.go(1);
+    });
     $( function() {
         function add_cart( element ) {
             let eng_name = element.children( ".eng_name" ).text();  
@@ -184,6 +188,46 @@
                 $( ".items-top" ).animate( {
                     "background-color" : "rgb(19, 228, 120)"
                 }, 100 );
+            } );
+        } );
+        
+        $( ".resource" ).on( "click", function() {
+            $( ".content" ).each( function() {
+                if ( $( this ).attr( "id" ) == "food" || $( this ).attr( "id" ) == "tool" || $( this ).attr( "id" ) == "equip" ){
+                    $( this ).addClass( "none" );
+                } else {
+                    $( this ).removeClass( "none" );
+                }
+            } );
+        } );
+
+        $( ".food" ).on( "click", function() {
+            $( ".content" ).each( function() {
+                if ( $( this ).attr( "id" ) == "resource" || $( this ).attr( "id" ) == "tool" || $( this ).attr( "id" ) == "equip" ){
+                    $( this ).addClass( "none" );
+                } else {
+                    $( this ).removeClass( "none" );
+                }
+            } );
+        } );
+
+        $( ".equip" ).on( "click", function() {
+            $( ".content" ).each( function() {
+                if ( $( this ).attr( "id" ) == "resource" || $( this ).attr( "id" ) == "tool" || $( this ).attr( "id" ) == "food" ){
+                    $( this ).addClass( "none" );
+                } else {
+                    $( this ).removeClass( "none" );
+                }
+            } );
+        } );
+
+        $( ".tool" ).on( "click", function() {
+            $( ".content" ).each( function() {
+                if ( $( this ).attr( "id" ) == "resource" || $( this ).attr( "id" ) == "equip" || $( this ).attr( "id" ) == "food" ){
+                    $( this ).addClass( "none" );
+                } else {
+                    $( this ).removeClass( "none" );
+                }
             } );
         } );
     } );

@@ -74,11 +74,17 @@
                 ***Buy***
             </div>
             <div class="main-container">
+                <div class="category-tab">
+                    <div class="sub-content resource">Resource</div>
+                    <div class="sub-content food">Food</div>
+                    <div class="sub-content equip">Equipment</div>
+                    <div class="sub-content tool">Tool</div>
+                </div>
                 <!-- ####### -->
                 <!-- Content -->
                 <!-- ######3 -->
                 {% for data_key in shop_data.keys() %}
-                <div class="content" 
+                <div class="content" id={{ shop_data[data_key]['category'] }} 
                     style="background : url('static/image/{{data_key}}.webp');
                         background-size : 120px;
                         background-repeat : no-repeat;
