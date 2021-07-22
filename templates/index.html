@@ -43,6 +43,7 @@
     <!-- cart -->
     <form action="" method="post">
         <div id="cart-menu" class="easyui-draggable easyui-resizable" data-options="handle:'#title'" >
+            <input type="text" required="required"　placeholder="名前" name="buyer-name" id="" class="buyer-name">
             <div id="title">
                 カート
                 <input type="submit" value="購入" class="submit">
@@ -73,6 +74,9 @@
                 ***Buy***
             </div>
             <div class="main-container">
+                <!-- ####### -->
+                <!-- Content -->
+                <!-- ######3 -->
                 {% for data_key in shop_data.keys() %}
                 <div class="content" 
                     style="background : url('static/image/{{data_key}}.webp');
@@ -82,6 +86,7 @@
                         background-color : rgb(170, 170, 170);
                         margin : 41px;">
                     <div class="eng_name" style="display : none;">{{ data_key }}</div>
+                    <div class="stock">在庫 : {{ stock_data[data_key]["stock"] }}</div>
                     <div class="name">{{ shop_data[data_key]["name"] }}</div>
                     <div class="amount">x{{ shop_data[data_key]["amount"] }}</div>
                     <div class="point">{{ shop_data[data_key]["point"] }}p</div>

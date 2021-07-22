@@ -39,6 +39,10 @@
                         let current_point = $( this ).children( ".item-point" ).text();
                         $( this ).children( ".item-amount" ).text( parseInt( current_amount ) - parseInt( amount.replace( "x", "" ) ) );
                         $( this ).children( ".item-point" ).text( parseInt( current_point ) - parseInt( point ) );
+
+                        $( this ).children( ".input-item-name" ).val( name );
+                        $( this ).children( ".input-item-amount" ).val( parseInt( current_amount ) - parseInt( amount.replace( 'x', '' ) ) );
+
                         if ( element.children( ".amount-menu" ).children( ".current-amount" ).val() == 0 ) {
                             console.log( element.children( ".amount-menu" ).children( ".current-amount" ).val() );
                             $( this ).remove();
@@ -150,8 +154,13 @@
 
         $( ".plus" ).on( "click", function() {
             let current_amount = $( this ).parent().children( "input" ).val();
-            $( this ).parent().children( "input" ).val( parseInt( current_amount ) + 1 );
-            add_cart( $( this ).parent().parent() )
+            let stock = $( this ).parent().parent().children( ".stock" ).text().replace( "在庫 : ", "" );
+            let amount = $( this ).parent().parent().children( ".amount" ).text().replace( "x", "" )
+            console.log( amount )
+            if ( parseInt( current_amount ) + 1 <= parseInt( stock ) / parseInt( amount ) ) {
+                $( this ).parent().children( "input" ).val( parseInt( current_amount ) + 1 );
+                add_cart( $( this ).parent().parent() )
+            }   
         } );
 
         $( ".submit" ).on( "mouseover", function() {

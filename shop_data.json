@@ -118,10 +118,5 @@
         "name" : "スキューバタンク(244)",
         "amount" : 1,
         "point" : 500
-    },
-    "Giganotosaurus_Egg" : {
-        "name" : "ギガノトサウルスの有精卵",
-        "amount" : 1,
-        "point" : 12000
     }
 }
