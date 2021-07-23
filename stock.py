@@ -82,7 +82,7 @@ def item_list_update():
     for key in shop_data.keys():
         try :
             sql = "insert into item_stock( eng_name, name, stock ) values( ?, ?, ?)"
-            cur.execute( sql, ( key, shop_data[key]["name"],  old[index][3] ) )
+            cur.execute( sql, ( key, shop_data[key]["name"], old[index][3] ) )
             conn.commit()
             index += 1
         except:
