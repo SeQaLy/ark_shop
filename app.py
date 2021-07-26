@@ -29,9 +29,7 @@ def check_buy_content():
             else:
                 print( "next" )
         except:
-            print( "{} is passed".format( data_key ) )
-    print( item_list )
-
+            pass
     return item_list
     
 
@@ -65,6 +63,8 @@ def index():
                 if stock_data[buy_item_name]["name"] == buy_item[0]:
                     if stock_data[buy_item_name]["stock"] - int( buy_item[1] ) >= 0:
                         stock.update_stock( buy_item[0], int( buy_item[1] ), "minus" )
+                        print( "#############" )
+                        print( stock.get_stock_data() )
                         total_point = request.form["total-point"]
                         buyer_name = request.form["buyer-name"]
                         notify.send_line_notify( format_text( buy_items, total_point, buyer_name ) )
@@ -75,4 +75,4 @@ def index():
     return render_template( "index.html", shop_data=shop_data, stock_data=stock_data )
 
 if __name__ == "__main__":
-    app.run( host="0.0.0.0", port=int( os.environ.get( "PORT", 5000 ) ) ) 
+    app.run( host="127.0.0.1", port=int( os.environ.get( "PORT", 5000 ) ), debug=True ) 

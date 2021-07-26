@@ -75,13 +75,13 @@ def item_list_update():
     index = 0
     old = get_stock_data()
     drop_table()
-    print( old )
+    print( old, end="<- drop table\n" )
 
     with open( "shop_data.json", mode="r", encoding="utf-8" ) as f:
         shop_data = json.load( f )
     for key in shop_data.keys():
         try :
-            sql = "insert into item_stock( eng_name, name, stock ) values( ?, ?, ?)"
+            sql = "insert into item_stock( eng_name, name, stock ) values( ?, ?, ? )"
             cur.execute( sql, ( key, shop_data[key]["name"], old[index][3] ) )
             conn.commit()
             index += 1
