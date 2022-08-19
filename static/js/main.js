@@ -4,12 +4,17 @@
     history.go(1);
     });
     $( function() {
+        // カート追加処理
         function add_cart( element ) {
             let eng_name = element.children( ".eng_name" ).text();  
             let name = element.children( ".name" ).text();
+            // 商品一つ当たりの追加量
             let amount = element.children( ".amount" ).text();
+            // 商品一つ当たりの消費ポイント量
             let point = element.children( ".point" ).text()
+            // 商品がいくつカートに追加されているかの量(手入力可能)
             let amount_now = element.children( ".amount-menu" ).children( ".current-amount" ).val();
+            
             // カートに既に存在するかどうか
             if ( check_cart( name ) ) {
                 $( ".aggregate" ).before( '<div class="items"><img src="static/image/' + eng_name + '.webp"><div class="item-name" name="item-name">' + name + '</div><input type="text" name="' + eng_name + '" class="none" value=' + name + '><div class="item-amount" name="item-amount">' + amount.replace( "x", "" ) +  '</div><input type="text" name="' + eng_name + '_amount' + '" class="input-item-amount none" value=' + amount.replace( "x", "" ) + '><div class="item-point" name="item-point">' + point.replace( "p", "" ) + '</div></div>' )
@@ -18,12 +23,13 @@
                     if ( $( this ).children( ".item-name" ).text() == name ) {
                         let current_amount = $( this ).children( ".item-amount" ).text();
                         let current_point = $( this ).children( ".item-point" ).text();
-                    
+                        
                         $( this ).children( ".item-amount" ).text( parseInt( current_amount ) + parseInt( amount.replace( 'x', '' ) ) );
                         $( this ).children( ".item-point" ).text( parseInt( current_point ) + parseInt( point ) );
 
                         $( this ).children( ".input-item-name" ).val( name );
                         $( this ).children( ".input-item-amount" ).val( parseInt( current_amount ) + parseInt( amount.replace( 'x', '' ) ) );
+                        
                     }
                 } );
             } 
@@ -41,11 +47,14 @@
                     if ( $( this ).children( ".item-name" ).text() == name ) {
                         let current_amount = $( this ).children( ".item-amount" ).text();
                         let current_point = $( this ).children( ".item-point" ).text();
-                        $( this ).children( ".item-amount" ).text( parseInt( current_amount ) - parseInt( amount.replace( "x", "" ) ) );
-                        $( this ).children( ".item-point" ).text( parseInt( current_point ) - parseInt( point ) );
-
-                        $( this ).children( ".input-item-name" ).val( name );
-                        $( this ).children( ".input-item-amount" ).val( parseInt( current_amount ) - parseInt( amount.replace( 'x', '' ) ) );
+                        if ( parseInt( current_amount ) - parseInt( amount.replace( "x", "" ) ) > 0 ) {
+                            $( this ).children( ".item-amount" ).text( parseInt( current_amount ) - parseInt( amount.replace( "x", "" ) ) );
+                            $( this ).children( ".item-point" ).text( parseInt( current_point ) - parseInt( point ) );
+    
+                            $( this ).children( ".input-item-name" ).val( name );
+                            $( this ).children( ".input-item-amount" ).val( parseInt( current_amount ) - parseInt( amount.replace( 'x', '' ) ) );
+                        }
+                    
 
                         if ( element.children( ".amount-menu" ).children( ".current-amount" ).val() == 0 ) {
                             console.log( element.children( ".amount-menu" ).children( ".current-amount" ).val() );
@@ -147,20 +156,29 @@
             }, 150 );
         } );
 
-        // amount plus and minus function
+        // 個数を入力で指定
+        $( ".current-amount" ).on( "blur", function() {
+            add_cart( $( this ).parent().parent() )
+        } )
+
+        // カートから減らす処理
         $( ".minus" ).on( "click", function() {
             let current_amount = $( this ).parent().children( "input" ).val();
+            // 一つ当たりの追加量
+            let amount = $( this ).parent().parent().children( ".amount" ).text().replace( "x", "" );
             if ( current_amount - 1 >= 0 ) {
                 $( this ).parent().children( "input" ).val( current_amount - 1 );
                 remove_cart( $( this ).parent().parent() );
             }
         } );
 
+        // カートに追加処理
         $( ".plus" ).on( "click", function() {
             let current_amount = $( this ).parent().children( "input" ).val();
+            console.log( current_amount );
             let stock = $( this ).parent().parent().children( ".stock" ).text().replace( "在庫 : ", "" );
             let amount = $( this ).parent().parent().children( ".amount" ).text().replace( "x", "" )
-            console.log( amount )
+            
             if ( parseInt( current_amount ) + 1 <= parseInt( stock ) / parseInt( amount ) ) {
                 $( this ).parent().children( "input" ).val( parseInt( current_amount ) + 1 );
                 add_cart( $( this ).parent().parent() )

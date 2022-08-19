@@ -1,5 +1,6 @@
 body  {
     margin : 0 auto;
+    background-color : rgb(49, 47, 47);
     max-height : 3000px;
 }
 
@@ -30,6 +31,7 @@ input[type="number"]::-webkit-inner-spin-button {
     flex-direction : row;
     width : 100%;
     background : silver;
+    border-bottom : solid 1px white;
 }
 
 .head-nav > li {
@@ -51,10 +53,10 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .menus {
-    height : 2500px;
+    height : 100vh;
     width : 100%;
-    background-color : rgb(49, 47, 47);
     margin-top : 1px;
+    background-color : rgb(49, 47, 47);
 }
 
 .menu {
@@ -86,10 +88,12 @@ input[type="number"]::-webkit-inner-spin-button {
 .main-container {
     position : relative;
     display : flex;
-    flex-direction : row;
-    flex-wrap : wrap;
+    justify-content : center;
     width : 100%;
-    height : 100%;;
+    background-color : rgb(49, 47, 47);
+    flex-direction : row;
+    /* flex-wrap : wrap; */
+    flex-wrap : wrap;
 }
 
 .category-tab {
@@ -213,6 +217,9 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 /* cart menu */
+.cart-menu {
+    overflow-y : scroll;
+}
 
 /* items top */
 .items-top { 
@@ -223,7 +230,7 @@ input[type="number"]::-webkit-inner-spin-button {
     display : flex;
     flex-direction : row;
     background-color : rgb(19, 228, 120);
-    border-bottom : solid 1px white;
+    
 }
 
 .item-name-top {
@@ -260,6 +267,7 @@ input[type="number"]::-webkit-inner-spin-button {
     
     text-align : center;
 }
+
 
 /* items */
 .items {

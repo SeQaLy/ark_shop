@@ -131,7 +131,7 @@
     "amount" : 100,
     "point" : 30
     },
-    "Pomp_Shotgun" : {
+    "Pomp_Shotgun" :{
         "category" : "equip",
         "name" : "ポンプショットガン(至高)",
         "amount" : 1,
